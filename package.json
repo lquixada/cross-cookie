@@ -1,0 +1,32 @@
+{
+  "name": "cross-cookie",
+  "version": "0.0.1",
+  "description": "Universal cookie API for Browsers and React Native.",
+  "browser": "src/browser.js",
+  "react-native": "src/react-native.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lquixada/cross-cookie.git"
+  },
+  "author": "Leonardo Quixada <lquixada@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "cookie",
+    "cookies",
+    "isomorphic",
+    "universal",
+    "node",
+    "react",
+    "native",
+    "browser"
+  ],
+  "dependencies": {
+    "eslint": "4.9.0",
+    "husky": "0.14.3",
+    "jest": "21.2.1"
+  }
+}

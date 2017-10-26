@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "eslint:recommended"
+  ],
+  "env": {
+    "jest": true,
+    "node": true,
+    "browser": true
+  },
+  "globals": {
+    "Promise": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "semi": ["error", "always"]
+  }
+}
