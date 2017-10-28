@@ -5,6 +5,7 @@
   "browser": "src/browser.js",
   "react-native": "src/react-native.js",
   "scripts": {
+    "prepush": "npm test",
     "test": "jest",
     "lint": "eslint ."
   },
