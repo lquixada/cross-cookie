@@ -39,6 +39,8 @@ const cookie = require('cross-cookie');
 
 ## Usage
 
+The code below works the same way be it on React Native or in a browser.
+
 ```javascript
 const cookie = require('cross-cookie');
 
