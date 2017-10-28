@@ -46,9 +46,24 @@ const cookie = require('cross-cookie');
 cookie.set('user', { name: 'Marcus' })
   .then(() => console.log('cookie set!'));
 
+// Store multiple users
+cookie.set({
+    user1: { name: 'Marcus' },
+    user2: { name: 'John' }
+  })
+  .then(() => console.log('cookies set!'));
+
 // Get current user
 cookie.get('user');
   .then(value => console.log(value));
+
+// Get multiple users
+cookie.getAll()
+  .then(cookies => {
+    console.log(cookies.user);
+    console.log(cookies.user1);
+    console.log(cookies.user2);
+  });
 
 // Remove current user
 cookie.remove('user');
