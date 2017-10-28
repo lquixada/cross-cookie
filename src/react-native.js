@@ -1,7 +1,7 @@
-const { AsyncStorage } = require('react-native');
-const { isObject, stringify } = require('./helpers');
+import { AsyncStorage } from 'react-native';
+import { isObject, stringify } from './helpers';
 
-const set = (key, val) => {
+export const set = (key, val) => {
   if (isObject(key)) {
     const obj = key;
     const pairs = Object.keys(obj).map(key => [key, stringify(obj[key])]);
@@ -12,9 +12,9 @@ const set = (key, val) => {
   return AsyncStorage.setItem(key, stringify(val));
 };
 
-const get = key => AsyncStorage.getItem(key);
+export const get = key => AsyncStorage.getItem(key);
 
-const getAll = () => AsyncStorage.getAllKeys()
+export const getAll = () => AsyncStorage.getAllKeys()
   .then(keys => AsyncStorage.multiGet(keys))
   .then(pairs => {
     const cookies = {};
@@ -24,24 +24,14 @@ const getAll = () => AsyncStorage.getAllKeys()
     return cookies;
   });
 
-const remove = key => AsyncStorage.removeItem(key);
+export const remove = key => AsyncStorage.removeItem(key);
 
-const clearAll = () => AsyncStorage.clear();
+export const clearAll = () => AsyncStorage.clear();
 
 // Used only for tests, it's private, don't use it
-const _mock = obj => {
+export const _mock = obj => {
   const pairs = Object.keys(obj).map(key => [key, stringify(obj[key])]);
   return AsyncStorage.multiSet(pairs);
 };
 
-const _platform = 'react native';
-
-module.exports = {
-  set,
-  get,
-  getAll,
-  remove,
-  clearAll,
-  _mock,
-  _platform,
-};
+export const _platform = 'react native';
