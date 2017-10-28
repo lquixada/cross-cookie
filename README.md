@@ -4,9 +4,9 @@ cross-cookie
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ================
 
-Universal cookie for Node, browsers and React Native. The scenario that cross-cookie really shines is when the same javascript codebase needs to run on different platforms.
+Universal cookie for browsers and React Native. The scenario that cross-cookie really shines is when the same javascript codebase needs to run on different platforms.
 
-- **Platform agnostic**: browsers, Node or React Native
+- **Platform agnostic**: browsers or React Native
 - **Simple interface**: no instantiation, no configuration and no extra dependency
 
 * * *
@@ -64,7 +64,6 @@ cookie.clearAll()
 
 ## Supported environments
 
-* Node 4+
 * React-Native
 * Browsers
   - Chrome
