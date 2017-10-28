@@ -1,5 +1,5 @@
 const { AsyncStorage } = require('react-native');
-const { isObject } = require('./helper');
+const { isObject } = require('./helpers');
 
 const set = (key, val) => {
   if (isObject(key)) {

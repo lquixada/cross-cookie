@@ -72,6 +72,24 @@ describe('cookie', () => {
         });
     });
 
+    it('should store array as string', () => {
+      return cookie.set('someKey', [1234])
+        .then(() => cookie.get('someKey'))
+        .then(val => {
+          expect(typeof val).toBe('string');
+          expect(val).toBe('[1234]');
+        });
+    });
+
+    it('should store object as string', () => {
+      return cookie.set('someKey', {foo: 'bar'})
+        .then(() => cookie.get('someKey'))
+        .then(val => {
+          expect(typeof val).toBe('string');
+          expect(val).toBe('{"foo":"bar"}');
+        });
+    });
+
     it('should store multiple values at once', () => {
       return cookie.set({
           someString: 'someValue',
@@ -103,9 +121,10 @@ describe('cookie', () => {
       document.cookie = 'someKey1=someValue1';
       document.cookie = 'someKey2=someValue2';
 
-      return cookie.clearAll().then(cookies => {
-        expect(Object.keys(cookies)).toEqual([]);
-      });
+      return cookie.clearAll()
+        .then(() => {
+          expect(document.cookie).toBe('');
+        });
     });
   });
 });
