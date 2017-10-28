@@ -1,6 +1,6 @@
 {
   "name": "cross-cookie",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Universal cookie API for Browsers and React Native.",
   "browser": "src/browser.js",
   "react-native": "src/react-native.js",
