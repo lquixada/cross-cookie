@@ -44,17 +44,6 @@ describe('cookie', () => {
     });
   });
 
-  describe('clearAll', () => {
-    it('should remove all keys from storage', () => {
-      document.cookie = 'someKey1=someValue1';
-      document.cookie = 'someKey2=someValue2';
-
-      return cookie.clearAll().then(cookies => {
-        expect(Object.keys(cookies)).toEqual([]);
-      });
-    });
-  });
-
   describe('set', () => {
     it('should store a value in a key', () => {
       return cookie.set('someKey', 'someValue')
@@ -106,6 +95,17 @@ describe('cookie', () => {
         .then(val => {
           expect(val).toBe(null);
         });
+    });
+  });
+
+  describe('clearAll', () => {
+    it('should remove all keys from storage', () => {
+      document.cookie = 'someKey1=someValue1';
+      document.cookie = 'someKey2=someValue2';
+
+      return cookie.clearAll().then(cookies => {
+        expect(Object.keys(cookies)).toEqual([]);
+      });
     });
   });
 });
