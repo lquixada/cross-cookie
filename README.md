@@ -35,6 +35,14 @@ import cookie from 'cross-cookie';
 const cookie = require('cross-cookie');
 ```
 
+The UMD build is also available on unpkg:
+
+```html
+<script src="//unpkg.com/cross-fetch/dist/cross-cookie.js"></script>
+```
+
+This adds the fetch function to the window object.
+
 * * *
 
 ## Usage
