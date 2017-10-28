@@ -51,6 +51,8 @@ const _mock = obj => {
   return Promise.resolve();
 };
 
+const _platform = 'browser';
+
 module.exports = {
   set,
   get,
@@ -58,4 +60,5 @@ module.exports = {
   remove,
   clearAll,
   _mock,
+  _platform,
 };

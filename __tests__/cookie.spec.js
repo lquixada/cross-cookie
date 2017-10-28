@@ -4,7 +4,7 @@ const cookieNative = require('../src/react-native');
 // Both implementations must behave the same way.
 [cookieBrowser, cookieNative].forEach(cookie => {
 
-  describe('cookie', () => {
+  describe(`${cookie._platform} cookie`, () => {
     beforeEach(() => cookie.clearAll());
 
     beforeEach(() => cookie._mock({

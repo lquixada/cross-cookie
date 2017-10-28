@@ -34,6 +34,8 @@ const _mock = obj => {
   return AsyncStorage.multiSet(pairs);
 };
 
+const _platform = 'react native';
+
 module.exports = {
   set,
   get,
@@ -41,4 +43,5 @@ module.exports = {
   remove,
   clearAll,
   _mock,
+  _platform,
 };
