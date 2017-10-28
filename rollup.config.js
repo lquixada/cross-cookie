@@ -14,7 +14,6 @@ export default [
       babel({
         exclude: 'node_modules/**'
       }),
-      uglify(),
     ],
   },
 
@@ -47,7 +46,6 @@ export default [
       babel({
         exclude: 'node_modules/**'
       }),
-      uglify(),
     ],
   }
 ];
