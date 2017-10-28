@@ -15,7 +15,7 @@ const set = (key, val) =>
 const get = key =>
   new Promise(resolve => {
     const match = document.cookie.match(new RegExp(`(${key})=(.*?)(;|$)`));
-    resolve(match ? match[2] : null);
+    resolve(match ? match[2] : undefined);
   });
 
 const getAll = () =>
@@ -24,6 +24,8 @@ const getAll = () =>
     document.cookie.replace(/; /g, ';')
       .split(';')
       .map(cookie => cookie.split('='))
+      // Filters only those who has a non-empty key (happens when you delete one)
+      .filter(([key, ]) => key)
       .forEach(([key, val]) => cookies[key] = val);
     resolve(cookies);
   });
@@ -41,10 +43,19 @@ const clearAll = () =>
     resolve();
   });
 
+// Used only for tests, it's private, don't use it
+const _mock = obj => {
+  Object.keys(obj).forEach(key => {
+    document.cookie = format(key, obj[key]);
+  });
+  return Promise.resolve();
+};
+
 module.exports = {
   set,
   get,
   getAll,
   remove,
   clearAll,
+  _mock,
 };
