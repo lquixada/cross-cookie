@@ -7,6 +7,7 @@ export default {
     file: 'dist/browser.js',
     format: 'umd',
     name: 'cookie',
+    sourcemap: true
   },
   plugins: [
     babel({
