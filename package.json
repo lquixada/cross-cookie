@@ -6,7 +6,9 @@
   "react-native": "src/react-native.js",
   "scripts": {
     "prepush": "npm test",
-    "test": "jest",
+    "test": "npm run -s jest && npm run -s lint",
+    "jest": "jest",
+    "jest:watch": "jest --watch --notify",
     "lint": "eslint ."
   },
   "repository": {
