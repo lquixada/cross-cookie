@@ -1,10 +1,11 @@
+import path from 'path';
 import uglify from 'rollup-plugin-uglify';
 import babel from 'rollup-plugin-babel';
 
 export default {
-  input: 'src/browser.js',
+  input: path.join(__dirname, 'src', 'browser.js'),
   output: {
-    file: 'dist/browser.js',
+    file: path.join(__dirname, 'dist', 'browser.min.js'),
     format: 'umd',
     name: 'cookie',
     sourcemap: true
