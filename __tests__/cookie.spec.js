@@ -137,12 +137,12 @@ const cookieNative = require('../src/react-native');
       it('should remove all keys from storage', () => {
         return cookie.getAll()
           .then(cookies => {
-            expect(Object.keys(cookies).length).toBe(5);
+            expect(Object.keys(cookies)).toHaveLength(5);
           })
           .then(() => cookie.clearAll())
           .then(() => cookie.getAll())
           .then(cookies => {
-            expect(Object.keys(cookies).length).toBe(0);
+            expect(Object.keys(cookies)).toHaveLength(0);
           });
       });
     });
