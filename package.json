@@ -24,7 +24,7 @@
     "native",
     "browser"
   ],
-  "dependencies": {
+  "devDependencies": {
     "eslint": "4.9.0",
     "husky": "0.14.3",
     "jest": "21.2.1"
