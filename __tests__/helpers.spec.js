@@ -2,23 +2,23 @@ const { stringify, isObject } = require('../src/helpers');
 
 describe('helpers', () => {
   describe('stringify', () => {
-    it('should format a key-value pair with string value', () => {
+    it('should stringify a string value', () => {
       expect(stringify('value')).toBe('value');
     });
 
-    it('should format a key-value pair with boolean value', () => {
+    it('should stringify a boolean value', () => {
       expect(stringify(true)).toBe('true');
     });
 
-    it('should format a key-value pair with number value', () => {
+    it('should stringify a number value', () => {
       expect(stringify(123)).toBe('123');
     });
 
-    it('should format a key-value pair with array value', () => {
+    it('should stringify a array value', () => {
       expect(stringify([123])).toBe('[123]');
     });
 
-    it('should format a key-value pair with object value', () => {
+    it('should stringify a object value', () => {
       expect(stringify({foo: 'bar'})).toBe('{"foo":"bar"}');
     });
   });
