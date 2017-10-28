@@ -1,25 +1,25 @@
-const { format, isObject } = require('../src/helpers');
+const { stringify, isObject } = require('../src/helpers');
 
 describe('helpers', () => {
-  describe('format', () => {
+  describe('stringify', () => {
     it('should format a key-value pair with string value', () => {
-      expect(format('key', 'value')).toBe('key=value');
+      expect(stringify('value')).toBe('value');
     });
 
     it('should format a key-value pair with boolean value', () => {
-      expect(format('key', true)).toBe('key=true');
+      expect(stringify(true)).toBe('true');
     });
 
     it('should format a key-value pair with number value', () => {
-      expect(format('key', 123)).toBe('key=123');
+      expect(stringify(123)).toBe('123');
     });
 
     it('should format a key-value pair with array value', () => {
-      expect(format('key', [123])).toBe('key=[123]');
+      expect(stringify([123])).toBe('[123]');
     });
 
     it('should format a key-value pair with object value', () => {
-      expect(format('key', {foo: 'bar'})).toBe('key={"foo":"bar"}');
+      expect(stringify({foo: 'bar'})).toBe('{"foo":"bar"}');
     });
   });
 

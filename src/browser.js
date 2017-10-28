@@ -1,12 +1,12 @@
-const { format, isObject } = require('./helpers');
+const { stringify, isObject } = require('./helpers');
 
 const set = (key, val) =>
   new Promise(resolve => {
     if (isObject(key)) {
       const obj = key;
-      Object.keys(obj).forEach(key => document.cookie = format(key, obj[key]));
+      Object.keys(obj).forEach(key => document.cookie = `${key}=${stringify(obj[val])}`);
     } else {
-      document.cookie = format(key, val);
+      document.cookie = `${key}=${stringify(val)}`;
     }
 
     resolve();
@@ -46,7 +46,7 @@ const clearAll = () =>
 // Used only for tests, it's private, don't use it
 const _mock = obj => {
   Object.keys(obj).forEach(key => {
-    document.cookie = format(key, obj[key]);
+    document.cookie = `${key}=${stringify(obj[key])}`;
   });
   return Promise.resolve();
 };
