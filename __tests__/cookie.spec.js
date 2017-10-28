@@ -20,6 +20,10 @@ const cookieNative = require('../src/react-native');
     });
 
     describe('get', () => {
+      it('should be a function', () => {
+        expect(typeof cookie.get).toBe('function');
+      });
+
       it('should be null when key does not exist', () => {
         return cookie.get('someInexistentKey').then(val => {
           expect(val).toBeUndefined();
@@ -34,6 +38,10 @@ const cookieNative = require('../src/react-native');
     });
 
     describe('getAll', () => {
+      it('should be a function', () => {
+        expect(typeof cookie.getAll).toBe('function');
+      });
+
       it('should be null when key does not exist', () => {
         return cookie.getAll().then(cookies => {
           expect(cookies.someKey1).toBe('someValue1');
@@ -43,6 +51,10 @@ const cookieNative = require('../src/react-native');
     });
 
     describe('set', () => {
+      it('should be a function', () => {
+        expect(typeof cookie.set).toBe('function');
+      });
+
       it('should store a value in a key', () => {
         return cookie.set('someKey', 'someValue')
           .then(() => cookie.get('someKey'))
@@ -99,6 +111,10 @@ const cookieNative = require('../src/react-native');
     });
 
     describe('remove', () => {
+      it('should be a function', () => {
+        expect(typeof cookie.remove).toBe('function');
+      });
+
       it('should remove a key from storage', () => {
         return cookie.set('someKey', 'someValue')
           .then(() => cookie.remove('someKey'))
@@ -114,6 +130,10 @@ const cookieNative = require('../src/react-native');
     });
 
     describe('clearAll', () => {
+      it('should be a function', () => {
+        expect(typeof cookie.clearAll).toBe('function');
+      });
+
       it('should remove all keys from storage', () => {
         return cookie.getAll()
           .then(cookies => {
