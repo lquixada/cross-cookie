@@ -1,6 +1,6 @@
 {
   "name": "cross-cookie",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Universal cookie API for Browsers and React Native.",
   "main": "dist/browser.js",
   "react-native": "dist/react-native.js",
