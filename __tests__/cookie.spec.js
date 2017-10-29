@@ -1,5 +1,5 @@
-const cookieBrowser = require('../src/browser');
-const cookieNative = require('../src/react-native');
+import cookieBrowser from '../src/browser';
+import cookieNative from '../src/react-native';
 
 // Both implementations must behave the same way.
 [cookieBrowser, cookieNative].forEach(cookie => {

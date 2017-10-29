@@ -40,7 +40,7 @@ export default [
     external: ['react-native'],
     output: {
       file: path.join(__dirname, 'dist', 'react-native.js'),
-      format: 'cjs',
+      format: 'es',
     },
     plugins: [
       babel({
