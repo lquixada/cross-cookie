@@ -2,7 +2,7 @@
   "name": "cross-cookie",
   "version": "0.0.6",
   "description": "Universal cookie API for Browsers and React Native.",
-  "browser": "dist/browser.js",
+  "main": "dist/browser.js",
   "react-native": "dist/react-native.js",
   "scripts": {
     "prepush": "npm test",

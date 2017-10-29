@@ -42,10 +42,5 @@ export default [
       file: path.join(__dirname, 'dist', 'react-native.js'),
       format: 'es',
     },
-    plugins: [
-      babel({
-        exclude: 'node_modules/**'
-      }),
-    ],
   }
 ];
