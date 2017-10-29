@@ -101,11 +101,14 @@ import cookieNative from '../src/react-native';
       });
 
       it('should store multiple values at once', () => {
-        return cookie.getAll()
+        return cookie.set({
+          'foo1': 'bar1',
+          'foo2': 'bar2',
+        })
+        .then(() => cookie.getAll())
           .then(cookies => {
-            expect(cookies.someString).toBe('someValue');
-            expect(cookies.someBoolean).toBe('false');
-            expect(cookies.someNumber).toBe('1234');
+            expect(cookies.foo1).toBe('bar1');
+            expect(cookies.foo2).toBe('bar2');
           });
       });
     });

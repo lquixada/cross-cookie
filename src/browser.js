@@ -4,7 +4,7 @@ const set = (key, val) =>
   new Promise(resolve => {
     if (isObject(key)) {
       const obj = key;
-      Object.keys(obj).forEach(key => document.cookie = `${key}=${stringify(obj[val])}`);
+      Object.keys(obj).forEach(key => document.cookie = `${key}=${stringify(obj[key])}`);
     } else {
       document.cookie = `${key}=${stringify(val)}`;
     }
