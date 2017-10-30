@@ -15,6 +15,7 @@ Universal cookie for browsers and React Native. The scenario that cross-cookie r
 
 -   [Install](#install)
 -   [Usage](#usage)
+-   [Demo](#demo)
 -   [Supported environments](#supported-environments)
 -   [License](#license)
 -   [Author](#author)
@@ -85,6 +86,11 @@ cookie.clearAll()
 ```
 
 > ⚠️ **Warning**: If you're in an environment that doesn't support Promises such as Internet Explorer, you must install an ES6 Promise compatible polyfill. [es6-promise](https://github.com/jakearchibald/es6-promise) is suggested.
+
+
+## Demo
+
+Try it out on the [**JSFiddle playground**](https://jsfiddle.net/lquixada/zdu93u11/) ➡️.
 
 
 ## Supported environments
