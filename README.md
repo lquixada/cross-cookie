@@ -64,7 +64,7 @@ cookie.set({
   .then(() => console.log('cookies set!'));
 
 // Get current user
-cookie.get('user');
+cookie.get('user')
   .then(value => console.log(value));
 
 // Get multiple users
@@ -76,7 +76,7 @@ cookie.getAll()
   });
 
 // Remove current user
-cookie.remove('user');
+cookie.remove('user')
   .then(() => console.log('cookie removed!'));
 
 // Clear all keys
