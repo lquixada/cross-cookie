@@ -100,6 +100,14 @@ import cookieNative from '../src/react-native';
           });
       });
 
+      it('should handle bad key', () => {
+        return cookie.set('bad;key', 'bar')
+          .then(() => cookie.get('bad;key'))
+          .then(val => {
+            expect(val).toBe('bar');
+          });
+      });
+
       it('should store multiple values at once', () => {
         return cookie.set({
           'foo1': 'bar1',
@@ -128,6 +136,19 @@ import cookieNative from '../src/react-native';
           .then(() => cookie.getAll())
           .then(cookies => {
             expect(cookies.someKey).toBeUndefined();
+          });
+      });
+
+      it('should remove a bad key from storage', () => {
+        return cookie.set('bad;key', 'someValue')
+          .then(() => cookie.remove('bad;key'))
+          .then(() => cookie.get('bad;key'))
+          .then(val => {
+            expect(val).toBe(undefined);
+          })
+          .then(() => cookie.getAll())
+          .then(cookies => {
+            expect(cookies['bad;key']).toBeUndefined();
           });
       });
     });
