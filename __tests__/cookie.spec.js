@@ -100,14 +100,6 @@ import cookieNative from '../src/react-native';
           });
       });
 
-      it.skip('should handle bad key', () => {
-        return cookie.set('bad;key', 'bar')
-          .then(() => cookie.get('bad;key'))
-          .then(val => {
-            expect(val).toBe('bar');
-          });
-      });
-
       it('should store multiple values at once', () => {
         return cookie.set({
           'foo1': 'bar1',
