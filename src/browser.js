@@ -1,12 +1,13 @@
-import { stringify, isObject } from './helpers';
+import { stringify, stringifyOptions, isObject } from './helpers';
 
 /* setters */
-const set = (key, val) => {
-  const obj = isObject(key)? key : {[key]: val};
+const set = (key, val, opts = {}) => {
+  const cookies = isObject(key)? key : {[key]: val};
+  opts = stringifyOptions(opts);
 
-  Object.keys(obj)
+  Object.keys(cookies)
     .forEach(key => {
-      document.cookie = `${key}=${stringify(obj[key])}`;
+      document.cookie = `${key}=${stringify(cookies[key])}; ${opts}`;
     });
 
   return Promise.resolve();
@@ -51,10 +52,10 @@ const clearAll = () => {
 };
 
 /* Used only for tests, it's private, don't use it */
-const _mock = obj => {
-  Object.keys(obj)
+const _mock = cookies => {
+  Object.keys(cookies)
     .forEach(key => {
-      document.cookie = `${key}=${stringify(obj[key])}`;
+      document.cookie = `${key}=${stringify(cookies[key])}`;
     });
 
   return Promise.resolve();
