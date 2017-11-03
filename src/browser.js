@@ -1,5 +1,6 @@
 import { stringify, isObject } from './helpers';
 
+/* setters */
 const set = (key, val) => {
   const obj = isObject(key)? key : {[key]: val};
 
@@ -11,6 +12,7 @@ const set = (key, val) => {
   return Promise.resolve();
 };
 
+/* getters */
 const get = key => {
   key = encodeURIComponent(key);
   const match = document.cookie.match(new RegExp(`(${key})=(.*?)(;|$)`));
@@ -32,6 +34,7 @@ const getAll = () => {
   return Promise.resolve(cookies);
 };
 
+/* removers */
 const remove = key => {
   key = encodeURIComponent(key);
   document.cookie = `${key}=; expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
@@ -49,7 +52,7 @@ const clearAll = () => {
   return Promise.resolve();
 };
 
-// Used only for tests, it's private, don't use it
+/* Used only for tests, it's private, don't use it */
 const _mock = obj => {
   Object.keys(obj)
     .forEach(key => {
