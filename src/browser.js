@@ -6,7 +6,7 @@ const set = (key, val) => {
 
   Object.keys(obj)
     .forEach(key => {
-      document.cookie = `${encodeURIComponent(key)}=${stringify(obj[key])}`;
+      document.cookie = `${key}=${stringify(obj[key])}`;
     });
 
   return Promise.resolve();
@@ -14,7 +14,6 @@ const set = (key, val) => {
 
 /* getters */
 const get = key => {
-  key = encodeURIComponent(key);
   const match = document.cookie.match(new RegExp(`(${key})=(.*?)(;|$)`));
 
   return Promise.resolve(match ? match[2] : undefined);
@@ -29,14 +28,13 @@ const getAll = () => {
     .map(cookie => cookie.split('='))
     // Filters only those who has a non-empty key (happens when you delete one)
     .filter(([key, ]) => key)
-    .forEach(([key, val]) => cookies[encodeURIComponent(key)] = val);
+    .forEach(([key, val]) => cookies[key] = val);
 
   return Promise.resolve(cookies);
 };
 
 /* removers */
 const remove = key => {
-  key = encodeURIComponent(key);
   document.cookie = `${key}=; expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
 
   return Promise.resolve();
