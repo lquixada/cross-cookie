@@ -1,9 +1,9 @@
 import { AsyncStorage } from 'react-native';
-import { isObject, addPrefix, hasPrefix, removePrefix, stringify } from './helpers';
+import { isPlainObject, addPrefix, hasPrefix, removePrefix, stringify } from './helpers';
 
 /* setters */
 const set = (key, val) => {
-  const obj = isObject(key)? key : {[key]: val};
+  const obj = isPlainObject(key)? key : {[key]: val};
   const pairs = Object.keys(obj).map(key => [addPrefix(key), stringify(obj[key])]);
 
   return AsyncStorage.multiSet(pairs);

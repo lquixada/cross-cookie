@@ -1,4 +1,4 @@
-const { stringify, isObject } = require('../src/helpers');
+const { stringify, isPlainObject } = require('../src/helpers');
 
 describe('helpers', () => {
   describe('stringify', () => {
@@ -23,13 +23,13 @@ describe('helpers', () => {
     });
   });
 
-  describe('isObject', () => {
+  describe('isPlainObject', () => {
     it('should be false on null', () => {
-      expect(isObject(null)).toBe(false);
+      expect(isPlainObject(null)).toBe(false);
     });
 
     it('should be true on object literal', () => {
-      expect(isObject({})).toBe(true);
+      expect(isPlainObject({})).toBe(true);
     });
   });
 });

@@ -1,8 +1,8 @@
-import { stringify, stringifyOptions, isObject } from './helpers';
+import { stringify, stringifyOptions, isPlainObject } from './helpers';
 
 /* setters */
 const set = (key, val, opts = {}) => {
-  const cookies = isObject(key)? key : {[key]: val};
+  const cookies = isPlainObject(key)? key : {[key]: val};
   opts = stringifyOptions(opts);
 
   Object.keys(cookies)
